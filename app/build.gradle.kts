@@ -68,4 +68,8 @@ dependencies {
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
+
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.gson.converter)
 }
