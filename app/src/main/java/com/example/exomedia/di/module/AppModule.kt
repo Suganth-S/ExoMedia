@@ -1,5 +1,7 @@
 package com.example.exomedia.di.module
 
+import com.example.exomedia.data.api.NetworkHelper
+import com.example.exomedia.data.api.NetworkHelperImpl
 import com.example.exomedia.data.api.NetworkService
 import com.example.exomedia.utils.AppConstant.BASE_URL
 import dagger.Module
@@ -47,6 +49,13 @@ object AppModule {
     @Provides
     fun provideNetworkService(retrofit: Retrofit): NetworkService {
         return retrofit.create(NetworkService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideApiHelper(netWorkHelper: NetworkHelperImpl): NetworkHelper
+    {
+        return netWorkHelper
     }
 
 }
