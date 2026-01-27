@@ -1,8 +1,11 @@
 package com.example.exomedia.di.module
 
+import android.content.Context
 import com.example.exomedia.data.api.NetworkHelper
 import com.example.exomedia.data.api.NetworkHelperImpl
 import com.example.exomedia.data.api.NetworkService
+import com.example.exomedia.di.ApplicationContext
+import com.example.exomedia.di.BaseUrl
 import com.example.exomedia.utils.AppConstant.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -34,6 +37,7 @@ object AppModule {
             .build()
     }
 
+    @BaseUrl
     @Provides
     fun provideBaseUrl() = BASE_URL
 
@@ -57,5 +61,4 @@ object AppModule {
     {
         return netWorkHelper
     }
-
 }
